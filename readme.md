@@ -17,7 +17,7 @@ The program is implemented using a combination of structs and an interface:
 
 ### Structs
 
-1. **`celcius`**: Represents temperatures in Celsius.
+1. **`celsius`**: Represents temperatures in Celsius.
 2. **`farenheit`**: Represents temperatures in Fahrenheit.
 3. **`kelvin`**: Represents temperatures in Kelvin.
 
@@ -26,7 +26,7 @@ Each struct has methods to convert the temperature to the other two units.
 ### Interface
 
 - **`hitungSuhu`**: An interface implemented by the structs, which defines the following methods:
-  - `toCelcius() float64`
+  - `toCelsius() float64`
   - `toFarenheit() float64`
   - `toKelvin() float64`
 
@@ -47,13 +47,13 @@ Each struct implements the `hitungSuhu` interface by defining the appropriate co
 
 ```bash
 Masukkan opsi suhu awal:
-1. Celcius
+1. Celsius
 2. Farenheit
 3. Kelvin
 > 1
 
 Masukkan opsi suhu akhir:
-1. Celcius
+1. Celsius
 2. Farenheit
 3. Kelvin
 > 2
@@ -69,7 +69,7 @@ Suhu yang dikonversi: 77.00
 ### Struct Definitions
 
 ```go
-type celcius struct {
+type celsius struct {
     suhu float64
 }
 
@@ -86,7 +86,7 @@ type kelvin struct {
 
 ```go
 type hitungSuhu interface {
-    toCelcius() float64
+    toCelsius() float64
     toFarenheit() float64
     toKelvin() float64
 }
@@ -96,38 +96,48 @@ type hitungSuhu interface {
 
 #### Celsius Methods
 
-- `toCelcius()`: Returns the same value.
+- `toCelsius()`: Returns the same value.
 - `toFarenheit()`: Converts Celsius to Fahrenheit using the formula:
+
   ```
   (9.0 / 5.0) * suhu + 32
   ```
+
 - `toKelvin()`: Converts Celsius to Kelvin using the formula:
+
   ```
   suhu + 273.15
   ```
 
 #### Fahrenheit Methods
 
-- `toCelcius()`: Converts Fahrenheit to Celsius using the formula:
+- `toCelsius()`: Converts Fahrenheit to Celsius using the formula:
+
   ```
   (suhu - 32) * (5.0 / 9.0)
   ```
+
 - `toFarenheit()`: Returns the same value.
 - `toKelvin()`: Converts Fahrenheit to Kelvin using the formula:
+
   ```
   (suhu + 459.67) * (5.0 / 9.0)
   ```
 
 #### Kelvin Methods
 
-- `toCelcius()`: Converts Kelvin to Celsius using the formula:
+- `toCelsius()`: Converts Kelvin to Celsius using the formula:
+
   ```
   suhu - 273.15
   ```
+
 - `toFarenheit()`: Converts Kelvin to Fahrenheit using the formula:
+
   ```
   (suhu * (9.0 / 5.0)) - 459.67
   ```
+
 - `toKelvin()`: Returns the same value.
 
 ### Main Function
@@ -150,6 +160,7 @@ The `main` function:
 1. Save the code to a file, e.g., `temperature_converter.go`.
 2. Open a terminal and navigate to the file's directory.
 3. Run the program using:
+
    ```bash
    go run temperature_converter.go
    ```
